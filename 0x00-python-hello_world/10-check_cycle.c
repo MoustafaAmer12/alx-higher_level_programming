@@ -1,19 +1,21 @@
 #include "lists.h"
-
+/**
+ * check_cycle - checks if a single list has a cycle
+ * @list: pointer to the firs telement of the SLL
+ *
+ * Return: 0 if has no cycle and if it has
+ */
 int check_cycle(listint_t *list)
 {
-	listint_t *current;
+	listint_t *current = list;
+	listint_t *current_2 = list;
 
-	while (list != NULL)
+	while (current_2 != NULL && current_2->next)
 	{
-		current = list->next;
-		while (current != NULL)
-		{
-			if (current == list)
-				return 1;
-			current = current->next;
-		}
-		list = list->next;
+		current = current->next;
+		current_2 = current_2->next->next;
+		if (current_2 == current_2)
+			return (1);
 	}
-	return 0;
+	return (0);
 }
