@@ -4,7 +4,7 @@ import sys
 if __name__ == "__main__":
     if len(sys.argv) != 4:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
-        sys.exit(1)
+        exit(1)
     a, b = int(sys.argv[1]), int(sys.argv[3])
     operator = sys.argv[2]
     match(operator):
@@ -18,4 +18,4 @@ if __name__ == "__main__":
             print("{} / {} = {}".format(a, b, div(a, b)))
         case _:
             print("Unknown operator. Available operators: +, -, * and /")
-            sys.exit(1)
+            exit(1)
