@@ -23,7 +23,7 @@ int palindrome(listint_t **head, listint_t *tail)
 {
 	if (!tail)
 		return (1);
-	if (palindrome(head, tail->next) && (*head)-n == tail->n)
+	if (palindrome(head, tail->next) && (*head)->n == tail->n)
 	{
 		*head = (*head)->next;
 		return (1);
