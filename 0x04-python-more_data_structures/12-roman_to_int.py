@@ -7,7 +7,14 @@ def roman_to_int(roman_string):
     roman_int = 0
     for i in range(len(roman_string)):
         if roman_string[i] == "V":
-            roman_int += 5
+            if i+1 < len(roman_string):
+                if roman_string[i+1] == "D" or roman_string[i+1] == "L" or\
+                        roman_string[i+1] == "M":
+                    roman_int -= 5
+                else:
+                    roman_int += 5
+            else:
+                roman_int += 5
         elif roman_string[i] == "X":
             if i+1 < len(roman_string):
                 if roman_string[i+1] == "D" or roman_string[i+1] == "L" or\
