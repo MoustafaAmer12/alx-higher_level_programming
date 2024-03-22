@@ -9,11 +9,30 @@ def roman_to_int(roman_string):
         if roman_string[i] == "V":
             roman_int += 5
         elif roman_string[i] == "X":
-            roman_int += 10
+            if i+1 < len(roman_string):
+                if roman_string[i+1] == "D" or roman_string[i+1] == "L" or\
+                        roman_string[i+1] == "M":
+                    roman_int -= 10
+                else:
+                    roman_int += 10
+            else:
+                roman_int += 10
         elif roman_string[i] == "L":
-            roman_int += 50
+            if i+1 < len(roman_string):
+                if roman_string[i+1] == "D" or roman_string[i+1] == "M":
+                    roman_int -= 50
+                else:
+                    roman_int += 50
+            else:
+                roman_int += 50
         elif roman_string[i] == "C":
-            roman_int += 100
+            if i+1 < len(roman_string):
+                if roman_string[i+1] == "D" or roman_string[i+1] == "M":
+                    roman_int -= 100
+                else:
+                    roman_int += 100
+            else:
+                roman_int += 100
         elif roman_string[i] == "D":
             roman_int += 500
         elif roman_string[i] == "M":
