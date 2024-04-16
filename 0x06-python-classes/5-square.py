@@ -8,7 +8,7 @@ class Square:
         """Constructor for the class
         Attributes:
             size: size of the square to be initialized"""
-        self.__size = size
+        self.size = size
 
     @property
     def size(self):
