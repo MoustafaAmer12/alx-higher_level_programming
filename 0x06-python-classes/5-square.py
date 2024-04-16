@@ -32,7 +32,7 @@ class Square:
         """Prints a square with # representation"""
         for i in range(self.size):
             for j in range(self.size):
-                print("#",end="")
-            if i != self.size -1:
+                print("#", end="")
+            if i != self.size - 1:
                 print()
         print()
