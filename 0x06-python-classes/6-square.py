@@ -40,18 +40,16 @@ class Square:
         try:
             for i in value:
                 count += 1
-                if type(i) is not int:
+                if type(i) is not int or i < 0:
                     err = True
-                elif i < 0:
-                    err = True
+                    break
         except Exception:
             err = True
         if count != 2:
             err = True
         if err:
             raise TypeError("position must be a tuple of 2 positive integers")
-        else:
-            self.__position = value
+        self.__position = value
 
     def my_print(self):
         """Prints a square with # representation"""
