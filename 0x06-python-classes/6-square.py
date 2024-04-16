@@ -37,12 +37,15 @@ class Square:
     def position(self, value):
         err = False
         count = 0
-        for i in value:
-            count += 1
-            if type(i) is not int:
-                err = True
-            elif i < 0:
-                err = True
+        try:
+            for i in value:
+                count += 1
+                if type(i) is not int:
+                    err = True
+                elif i < 0:
+                    err = True
+        except Exception:
+            err = True
         if count != 2:
             err = True
         if err:
