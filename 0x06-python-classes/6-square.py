@@ -8,8 +8,8 @@ class Square:
         """Constructor for the class
         Attributes:
             size: size of the square to be initialized"""
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
@@ -27,7 +27,7 @@ class Square:
         """Calculates the area of the square
         Returns:
             Area"""
-        return pow(self.__size, 2)
+        return pow(self.size, 2)
 
     @property
     def position(self):
@@ -49,12 +49,12 @@ class Square:
 
     def my_print(self):
         """Prints a square with # representation"""
-        if self.__size == 0:
+        if self.size == 0:
             print()
             return
-        print("\n"*self.__position[1], end="")
-        for i in range(self.__size):
-            print(" "*self.__position[0], end="")
-            for j in range(self.__size):
+        print("\n"*self.position[1], end="")
+        for i in range(self.size):
+            print(" "*self.position[0], end="")
+            for j in range(self.size):
                 print("#", end="")
             print()
