@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""A Module that creates and identifies user defined square objects with sizes"""
+"""A Module that creates and identifies user defined squares with sizes"""
 
 
 class Square:
