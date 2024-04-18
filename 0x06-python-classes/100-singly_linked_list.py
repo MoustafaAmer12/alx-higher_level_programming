@@ -19,7 +19,7 @@ class Node:
     @data.setter
     def data(self, value):
         if type(value) is not int:
-            raise TypeError("next_node must be a Node object")
+            raise TypeError("data must be an integer")
         self.__data = value
 
     @property
