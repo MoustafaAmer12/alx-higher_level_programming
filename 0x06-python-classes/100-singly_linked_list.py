@@ -28,40 +28,43 @@ class Node:
 
     @next_node.setter
     def next_node(self, value):
-        if value == None or type(value) is type(self):
+        if not value or type(value) is type(self):
             self.__next_node = value
         else:
             raise TypeError("next_node must be a Node object")
 
+
 class SinglyLinkedList:
     """A List of Nodes joined together"""
     def __init__(self):
+        """Initialize an empty Singly Linked List"""
         self.__head = None
 
     def __str__(self):
+        """Defines the print format for the SinglyLinkedList"""
         current = self.__head
         string = ""
-        while current != None:
+        while current:
             string += str(current.data)
-            if current.next_node != None:
+            if current.next_node:
                 string += "\n"
             current = current.next_node
         return string
 
     def sorted_insert(self, value):
         new = Node(value)
-        if self.__head == None:
+        if not self.__head:
             self.__head = new
         elif self.__head.data > new.data:
             new.next_node = self.__head
             self.__head = new
         else:
             current = self.__head
-            while current.next_node != None:
+            while current.next_node:
                 if current.next_node.data > new.data:
                     new.next_node = current.next_node
                     current.next_node = new
                     break
                 current = current.next_node
-            if current.next_node == None:
+            if not current.next_node:
                 current.next_node = new
