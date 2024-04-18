@@ -60,14 +60,10 @@ class Square:
             print()
 
     def __str__(self):
-        string = ""
         if self.size == 0:
-            string += "\n"
+            return ''
         else:
-            string += "\n"*self.position[1]
-            for i in range(self.size):
-                string += " "*self.position[0]
-                string += "#"*self.size
-                if i != self.size - 1:
-                    string += "\n"
-        return string
+            new_lines = "\n"*self.position[1]
+            string = " "*self.position[0]
+            string += "#"*self.size
+        return new_lines + '\n'.join(string for e in range(self.size))
