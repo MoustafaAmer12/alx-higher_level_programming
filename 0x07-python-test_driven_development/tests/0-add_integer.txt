@@ -1,0 +1,39 @@
+''0-add_integer'' module
+
+Using ''add_integer''
+
+This is a test file for ''add_integer'' method in the ''0-add_integer'' module
+Import the function:
+	>>> add_integer = __import__('0-add_integer').add_integer
+
+Now test it:
+
+Tests for positive numbers
+>>> add_integer(1, 2)
+3
+
+>>> add_integer(2)
+100
+
+Tests for positive and negative
+>>> add_integer(100, -2)
+98
+
+>>> add_integer(2, -5)
+-3
+
+Tests for floats
+>>> add_integer(100.4, -60)
+40
+
+>>> add_integer(58.4, 4.9)
+62
+
+Tests for Errors
+>>> add_integer(4, "School")
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+>>> add_integer(False, True)
+Traceback (most recent call last):
+TypeError: a must be an integer
