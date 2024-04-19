@@ -1,10 +1,10 @@
-''0-add_integer'' module
-
+The ''0-add_integer'' module
+==============================
 Using ''add_integer''
 
 This is a test file for ''add_integer'' method in the ''0-add_integer'' module
 Import the function:
-	>>> add_integer = __import__('0-add_integer').add_integer
+>>> add_integer = __import__('0-add_integer').add_integer
 
 Now test it:
 
@@ -28,6 +28,10 @@ Tests for floats
 
 >>> add_integer(58.4, 4.9)
 62
+
+Test for negative floats
+>>> add_integer(-12.5, -5.9)
+-17
 
 Tests for Errors
 >>> add_integer(4, "School")
