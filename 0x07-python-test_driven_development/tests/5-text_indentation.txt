@@ -1,0 +1,33 @@
+===============================
+The ''text_indentation'' Module
+===============================
+Using ''text_indenetation''
+---------------------------
+First import the function:
+	>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Test the function for corner cases:
+	>>> text_indentation()
+	Traceback (most recent call last):
+	TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+	>>> text_indentation(5)
+	Traceback (most recent call last):
+	TypeError: text must be a string
+
+Test for normal execution:
+	>>> text_indentation("Moustafa")
+	Moustafa
+	
+	>>> text_indentation("Mous. Tafa")
+	Mous.
+	<BLANKLINE>
+	Tafa
+	
+	>>> text_indentation(". ? :")
+	.
+	<BLANKLINE>
+	?
+	<BLANKLINE>
+	:
+	<BLANKLINE>
