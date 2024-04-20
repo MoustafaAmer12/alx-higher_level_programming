@@ -1,0 +1,36 @@
+==========================
+The ''say_my_name'' Module
+==========================
+Using ''say_my_name'
+--------------------
+First Import the function:
+	>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Test the Function for several Corner Cases:
+Normal Operation with 2 parameters
+	>>> say_my_name("Moustafa", "Esam")
+	My name is Moustafa Esam
+
+	>>> say_my_name("Ahmed", "Moustafa")
+	My name is Ahmed Moustafa
+
+Normal Operation with 1 operand:
+	>>> say_my_name("Amer")
+	My name is Amer 
+
+	>>> say_my_name("Mahmoud")
+	My name is Mahmoud 
+
+TypeError Test
+	>>> say_my_name("Ahmed", 5)
+	Traceback (most recent call last):
+	TypeError: last_name must be a string
+
+	>>> say_my_name(5)
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
+Exception Test
+	>>> say_my_name()
+	Traceback (most recent call last):
+	TypeError: say_my_name() missing 1 required positional argument: 'first_name'
