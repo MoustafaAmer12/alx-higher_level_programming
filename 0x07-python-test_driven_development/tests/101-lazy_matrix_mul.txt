@@ -40,6 +40,10 @@ Tests for exceptions:
 	Traceback (most recent call last):
 	ValueError: setting an array element with a sequence. The requested array has an inhomogeneous shape after 1 dimensions. The detected shape was (2,) + inhomogeneous part.
 
+	>>> matrix_mul("Ahmed", [1, 2, 3])
+	Traceback (most recent call last):
+	numpy.core._exceptions._UFuncNoLoopError: ufunc 'matmul' did not contain a loop with signature matching types (dtype('<U5'), dtype('int64')) -> None
+
 	>>> matrix_mul([[1, 2]], [[1, 2], 1])
 	Traceback (most recent call last):
 	ValueError: setting an array element with a sequence. The requested array has an inhomogeneous shape after 1 dimensions. The detected shape was (2,) + inhomogeneous part.
@@ -79,3 +83,7 @@ Tests for exceptions:
 	>>> matrix_mul([[1], [3, 2]], [[3, 4], [5, 6]])
 	Traceback (most recent call last):
 	ValueError: setting an array element with a sequence. The requested array has an inhomogeneous shape after 1 dimensions. The detected shape was (2,) + inhomogeneous part.
+
+	>>> matrix_mul([None], [])
+	Traceback (most recent call last):
+	ValueError: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 0 is different from 1)
