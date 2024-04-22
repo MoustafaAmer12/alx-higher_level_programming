@@ -87,3 +87,21 @@ Tests for exceptions:
 	>>> matrix_mul([None], [])
 	Traceback (most recent call last):
 	ValueError: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 0 is different from 1)
+
+>>> try:
+...	print(matrix_mul(None, None))
+... except Exception as te:
+... 	print(te)
+matmul: Input operand 0 does not have enough dimensions (has 0, gufunc core with signature (n?,k),(k,m?)->(n?,m?) requires 1)
+
+>>> try:
+...	print(matrix_mul([[1, 2], [3, 4]], [[1, 2], ["3", 4]]))
+... except Exception as te:
+... 	print(te)
+ufunc 'matmul' did not contain a loop with signature matching types (dtype('int64'), dtype('<U21')) -> None
+
+>>> try:
+...	print(matrix_mul([], []))
+... except Exception as te:
+... 	print(te)
+0.0
