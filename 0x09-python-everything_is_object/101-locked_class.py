@@ -10,9 +10,4 @@ class LockedClass:
     A class that only enables setting first_name attribute
     to instances
     """
-    def __setattr__(self, name, value):
-        if name == "first_name":
-            self.__dict__[f"{name}"] = value
-        else:
-            raise AttributeError("'LockedClass'\
- object has no attribute 'last_name'")
+    __slots__ = ["first_name"]
