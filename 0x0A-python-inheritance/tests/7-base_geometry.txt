@@ -15,7 +15,7 @@ Exception: area() is not implemented
 
 >>> bg.area(1)
 Traceback (most recent call last):
-TypeError: BaseGeometry.area() takes 1 positional argument but 2 were given
+TypeError: area() takes 1 positional argument but 2 were given
 
 
 Test integer_validator:
