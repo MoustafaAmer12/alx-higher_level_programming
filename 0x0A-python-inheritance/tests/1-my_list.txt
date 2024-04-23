@@ -41,3 +41,13 @@ TypeError: 'int' object is not iterable
 
 >>> MyList(["ahmed", "mohamed", "Moustafa"]).print_sorted()
 ['Moustafa', 'ahmed', 'mohamed']
+
+>>> my_list = MyList([1, -9, 8, 4, 5, 0, -12])
+>>> print(my_list)
+[1, -9, 8, 4, 5, 0, -12]
+
+>>> my_list.print_sorted()
+[-12, -9, 0, 1, 4, 5, 8]
+
+>>> print(my_list)
+[1, -9, 8, 4, 5, 0, -12]
