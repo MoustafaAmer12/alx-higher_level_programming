@@ -101,4 +101,5 @@ class Rectangle:
     def square(cls, size=0):
         """Class method that creates a square instance of the Rectangle object
         """
-        return cls(size, size)
+        new_rect = cls(size, size)
+        return new_rect
