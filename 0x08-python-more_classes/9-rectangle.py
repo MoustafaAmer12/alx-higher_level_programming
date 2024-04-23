@@ -14,6 +14,8 @@ class Rectangle:
     print_symbol = "#"
 
     def __init__(self, width=0, height=0):
+        """Called upon creation of a new rectangle object
+        """
         self.height = height
         self.width = width
         Rectangle.number_of_instances += 1
@@ -43,13 +45,21 @@ class Rectangle:
         self.__height = value
 
     def area(self):
+        """Calculates the area of a rectangle
+        """
         return self.width * self.height
 
     def perimeter(self):
+        """Calculates the perimeter of a rectangle
+        """
         return 0 if self.width == 0 or self.height == 0\
                     else 2 * (self.width + self.height)
 
     def __str__(self):
+        """Called upon creating a str of an object
+        Returns:
+            str representation of the rectangle in the form of print symbols
+        """
         rect = ""
         if self.width == 0 or self.height == 0:
             return rect
@@ -60,14 +70,23 @@ class Rectangle:
         return rect
 
     def __repr__(self):
+        """Called upon creating a repr of an object
+        """
         return "Rectangle(" + str(self.width) + ", " + str(self.height) + ")"
 
     def __del__(self):
+        """Called upon deleting an object
+        """
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
 
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
+        """Static method the compares two rectangles based on
+        the area
+        Returns:
+            The biggest rectangle
+        """
         if type(rect_1) is not Rectangle:
             raise TypeError("rect_1 must be an instance of Rectangle")
         if type(rect_2) is not Rectangle:
@@ -80,4 +99,6 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
+        """Class method that creates a square instance of the Rectangle object
+        """
         return cls(size, size)
