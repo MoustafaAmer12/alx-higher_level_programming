@@ -8,6 +8,16 @@ First Include The class:
 
 >>> bg = BaseGeometry()
 
+Test Area:
+>>> bg.area()
+Traceback (most recent call last):
+Exception: area() is not implemented
+
+>>> bg.area(1)
+Traceback (most recent call last):
+TypeError: BaseGeometry.area() takes 1 positional argument but 2 were given
+
+
 Test integer_validator:
 Normal Operation:
 >>> bg.integer_validator("my_int", 12)
