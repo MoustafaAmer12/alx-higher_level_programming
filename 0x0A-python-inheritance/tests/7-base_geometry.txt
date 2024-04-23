@@ -1,10 +1,10 @@
 ===========================
-The 'base_geometry' Moduele
+The 'base_geometry' Module
 ===========================
 Using ''BaseGeometry''
 ----------------------
-First Import The class
->>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+First Import The class:
+	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 >>> bg = BaseGeometry()
 
@@ -26,6 +26,7 @@ Normal Operation:
 
 
 >>> bg.integer_validator("", 4)
+
 
 Exceptions Test:
 >>> bg.integer_validator("name", "john")
