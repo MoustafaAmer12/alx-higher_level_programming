@@ -32,3 +32,12 @@ TypeError: 'int' object is not iterable
 
 >>> MyList("ahmed").print_sorted()
 ['a', 'd', 'e', 'h', 'm']
+
+>>> MyList([1, 0, -12.4, 12]).print_sorted()
+[-12.4, 0, 1, 12]
+
+>>> MyList([]).print_sorted()
+[]
+
+>>> MyList(["ahmed", "mohamed", "Moustafa"]).print_sorted()
+['Moustafa', 'ahmed', 'mohamed']
