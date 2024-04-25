@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-A Module that creates a function to serialize 
+A Module that creates a function to serialize
 an object into a json string
 """
 import json
