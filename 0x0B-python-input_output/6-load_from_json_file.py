@@ -7,5 +7,10 @@ import json
 
 
 def load_from_json_file(filename):
+    """A Function that deserializes objects
+    in a JSON formatted file
+    Returns:
+        Deserialized object
+    """
     with open(filename, encoding="utf-8") as file:
         return json.load(file)
