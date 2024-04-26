@@ -57,16 +57,20 @@ class Rectangle(Base):
         Returns:
             Area of the rectangle
         """
-        return self.__width * self.__height
+        return self.width * self.height
 
     def display(self):
         """Function that prints the recangle in
         the form of #
         """
-        string = ""
-        rect = "#" * self.width
+        string = "\n" * self.y
+        rect = " " * self.x
+        rect += "#" * self.width
         for j in range(self.height):
             string += rect
             if j != self.height - 1:
                 string += "\n"
         print(string)
+
+    def __str__(self):
+        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
