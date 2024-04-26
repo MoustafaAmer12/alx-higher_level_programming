@@ -23,16 +23,8 @@ class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
-        self.id = id
-
-    @property
-    def id(self):
-        return self.id
-
-    @id.setter
-    def id(self, id):
         if id:
             self.id = id
         else:
-            self.__nb_objects += 1
-            self.id = self.__nb_objects
+            self.__class__.__nb_objects += 1
+            self.id = self.__class__.__nb_objects
