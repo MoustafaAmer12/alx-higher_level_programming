@@ -6,6 +6,10 @@ a pattern in a file
 
 
 def append_after(filename="", search_string="", new_string=""):
+    """Function that searches for a specific string
+    occurrence, and adds a new line after it with
+    a given string
+    """
     with open(filename, "r+", encoding="utf-8") as file:
         lines = file.readlines()
         idx = 0
