@@ -40,7 +40,7 @@ class Rectangle(Base):
     def __setattr__(self, name, value):
         if name == "id":
             super().__setattr__(name, value)
-        elif name in ["x", "y", "width","height"]:
+        elif name in ["x", "y", "width", "height"]:
             if type(value) is not int:
                 raise TypeError(f"{name} must be an integer")
             if (name == "width" or name == "height") and value <= 0:
