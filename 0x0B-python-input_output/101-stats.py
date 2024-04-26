@@ -46,7 +46,7 @@ if __name__ == '__main__':
             timecode = b[0].lstrip(' [')
             try:
                 datetime.strptime(timecode, '%Y-%m-%d %H:%M:%S.%f')
-            except:
+            except Exception:
                 stderr.write("{}: {}: invalid timecode\n".format(
                     argv[0], line_no))
                 pass
@@ -76,6 +76,6 @@ if __name__ == '__main__':
                 print_log_totals(total_file_size, code_counts)
         print_log_totals(total_file_size, code_counts)
 
-    except (KeyboardInterrupt):
+    except KeyboardInterrupt:
         print_log_totals(total_file_size, code_counts)
         raise
