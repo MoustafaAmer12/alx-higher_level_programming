@@ -48,3 +48,18 @@ class Rectangle(Base):
             if (name == "x" or name == "y") and value < 0:
                 raise ValueError(f"{name} must be >= 0")
             self.__dict__[f"_{self.__class__.__name__}__{name}"] = value
+        else:
+            self.__dict__[f"{name}"] = value
+
+    def area(self):
+        return self.__width * self.__height
+
+    def display(self):
+        string = ""
+        rect = "#" * self.width
+        for j in range(self.height):
+            string += rect
+            if j != self.height - 1:
+                string += "\n"
+        print(string)
+
