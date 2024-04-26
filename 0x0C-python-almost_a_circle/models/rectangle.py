@@ -52,9 +52,17 @@ class Rectangle(Base):
             self.__dict__[f"{name}"] = value
 
     def area(self):
+        """Function that calculates the area of
+        the retangle
+        Returns:
+            Area of the rectangle
+        """
         return self.__width * self.__height
 
     def display(self):
+        """Function that prints the recangle in
+        the form of #
+        """
         string = ""
         rect = "#" * self.width
         for j in range(self.height):
@@ -62,4 +70,3 @@ class Rectangle(Base):
             if j != self.height - 1:
                 string += "\n"
         print(string)
-
