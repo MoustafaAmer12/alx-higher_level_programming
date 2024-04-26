@@ -1,5 +1,5 @@
-# (331) 0x0C. Python - Almost a circle
-Foundations > Higher-level programming > Python
+# Almost A Circle
+# 0x0C. Python - Almost a circle
 
 ---
 
@@ -203,7 +203,7 @@ Update the class `Base` by adding the class method `def create(cls, **dictionary
 
 File(s): [`models/base.py`](./models/base.py)
 
-### :white_check_mark: 19. File to instances
+### :white_check_mark_: 19. File to instances
 Update the class `Base` by adding the class method `def load_from_file(cls):` that returns a list of instances:
 * The filename must be: `<Class name>.json` - example: `Rectangle.json`
 * If the file doesn’t exist, return an empty list
@@ -224,7 +224,7 @@ Update the class `Base` by adding the class methods `def save_to_file_csv(cls, l
 
 File(s): [`models/base.py`](./models/base.py)
 
-### :white_large_square: 21. Let's draw it
+### :white_check_mark: 21. Let's draw it
 Update the class `Base` by adding the static method `def draw(list_rectangles, list_squares):` that opens a window and draws all the `Rectangle`s and `Square`s:
 * You must use the [Turtle graphics module](https://docs.python.org/3.0/library/turtle.html)
 * To install it: `sudo apt-get install python3-tk`
