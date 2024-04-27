@@ -61,3 +61,14 @@ class Square(Rectangle):
         elif kwargs and len(kwargs) != 0:
             for key, value in kwargs.items():
                 self.__dict__[key] = value
+
+    def to_dictionary(self):
+        """A Method that returns the dictionary
+        representation of a Square Object
+        """
+        sq_dict = dict()
+        sq_dict["x"] = self.x
+        sq_dict["y"] = self.y
+        sq_dict["size"] = self.size
+        sq_dict["id"] = self.id
+        return sq_dict

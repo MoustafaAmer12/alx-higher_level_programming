@@ -97,3 +97,15 @@ class Rectangle(Base):
         elif kwargs and len(kwargs) != 0:
             for key, value in kwargs.items():
                 self.__dict__[key] = value
+
+    def to_dictionary(self):
+        """A Method that returns the dictionary
+        representation of a Rectangle instance
+        """
+        rect_dict = dict()
+        rect_dict["x"] = self.x
+        rect_dict["y"] = self.y
+        rect_dict["id"] = self.id
+        rect_dict["width"] = self.width
+        rect_dict["height"] = self.height
+        return rect_dict
