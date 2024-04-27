@@ -63,8 +63,10 @@ class Rectangle(Base):
         """Function that prints the recangle in
         the form of #
         """
-        string = "\n" * self.y
-        rect = " " * self.x
+        string = ""
+        rect = ""
+        string += "\n" * self.y
+        rect += " " * self.x
         rect += "#" * self.width
         for j in range(self.height):
             string += rect
