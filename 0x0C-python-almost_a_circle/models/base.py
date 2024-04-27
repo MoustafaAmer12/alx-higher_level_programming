@@ -3,6 +3,7 @@
 Module that defines a base class for the
 project initialization
 """
+import json
 
 
 class Base:
@@ -28,3 +29,22 @@ class Base:
         else:
             self.__class__.__nb_objects += 1
             self.id = self.__class__.__nb_objects
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        """Returns the json representation of a
+        list of dictionaries
+        """
+        return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """Writes the JSON representaion of an object
+        into a file
+        """
+        filename = f"{cls.__name__}.json"
+        json_list = []
+        for obj in list_objs:
+            json_list.append(obj.to_dictionary())
+        with open(filename, "w", encoding="utf-8") as file:
+            json.dump(cls.to_json_string(json_list), file)
