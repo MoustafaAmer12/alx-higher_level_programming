@@ -28,6 +28,36 @@ class Square(Rectangle):
     def __init__(self, size, x=0, y=0, id=None):
         super().__init__(size, size, x, y, id)
 
+    def __getattr__(self, name):
+        if name == "size":
+            return self.width
+        return super().__getattr__(name)
+
+    def __setattr__(self, name, value):
+        if name == "size":
+            self.width = value
+            self.height = value
+        else:
+            super().__setattr__(name, value)
+
     def __str__(self):
         return f"[Square] ({self.id}) {self.x}/\
-{self.y} - {self.height}"
+{self.y} - {self.size}"
+
+    def update(self, *args, **kwargs):
+        """A method that updates the attributes
+        of an Square instance
+        """
+        if args and len(args) != 0:
+            for i in range(len(args)):
+                if i == 0:
+                    self.id = args[i]
+                elif i == 1:
+                    self.size = args[i]
+                elif i == 2:
+                    self.x = args[i]
+                elif i == 3:
+                    self.y = args[i]
+        elif kwargs and len(kwargs) != 0:
+            for key, value in kwargs.items():
+                self.__dict__[key] = value
