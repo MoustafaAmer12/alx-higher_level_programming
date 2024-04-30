@@ -59,5 +59,5 @@ class Base:
         """A function that deserializes a JSON
         string into a dict"""
         if json_string is None or json_string == "":
-            return [];
-        return json.loads(json_string);
+            return []
+        return json.loads(json_string)
