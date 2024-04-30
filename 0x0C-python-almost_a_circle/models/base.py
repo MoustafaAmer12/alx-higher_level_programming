@@ -36,7 +36,7 @@ class Base:
         list of dictionaries
         """
         if list_dictionaries is None or list_dictionaries == []:
-            return "[]"
+            return '[]'
         return json.dumps(list_dictionaries)
 
     @classmethod
@@ -61,3 +61,12 @@ class Base:
         if json_string is None or json_string == "":
             return []
         return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """A function that creates an object with the
+        assigned attributes to the dict from its base type
+        """
+        obj = cls(1, 1, 0, 0)
+        obj.update(**dictionary)
+        return obj
