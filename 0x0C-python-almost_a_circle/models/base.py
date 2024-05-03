@@ -35,9 +35,9 @@ class Base:
         """Returns the json representation of a
         list of dictionaries
         """
-        if list_dictionaries is None:
+        if list_dictionaries is None or list_dictionaries == []:
             return "[]"
-        else: 
+        else:
             return json.dumps(list_dictionaries)
 
     @classmethod
