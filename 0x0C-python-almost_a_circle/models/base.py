@@ -81,10 +81,9 @@ class Base:
         try:
             with open(filename, 'r', encoding="utf-8") as file:
                 data = file.readlines()
-                inst_list = cls.from_json_string(data)
+                inst_list = cls.from_json_string(data[0])
                 for instance in inst_list:
-                    obj = cls(1, 1, 0, 0)
-                    obj.update(**instance)
+                    obj = cls.create(**instance)
                     obj_list.append(obj)
         except FileNotFoundError:
             obj_list = []
