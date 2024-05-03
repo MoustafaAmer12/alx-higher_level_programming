@@ -38,7 +38,8 @@ class Base:
         """
         if list_dictionaries is None or list_dictionaries == []:
             return '[]'
-        return json.dumps(list_dictionaries)
+        else:
+            return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
@@ -96,14 +97,19 @@ class Base:
     def save_to_file_csv(cls, list_objs):
         """Saves Objects into a csv file
         """
-        fields = ["id", "width", "height", "x", "y"]
-        if cls.__name__ == "Square":
-            fields[1:2] = "size"
+        if cls.__name__ == "Rectangle":
+            fields = ("id", "width", "height", "x", "y")
+        elif cls.__name__ == "Square":
+            fields = ("id", "size", "x", "y")
         filename = f"{cls.__name__}.csv"
+        
+        list_dict = []
+        for item in list_objs:
+            list_dict.append(item.to_dictionary())
         with open(filename, "w", encoding="utf-8") as file:
             writer = csv.DictWriter(file, fieldnames=fields)
             writer.writeheader()
-            writer.writerows(list_objs)
+            writer.writerows(list_dict)
 
     @classmethod
     def load_from_file_csv(cls):
@@ -115,9 +121,8 @@ class Base:
         filename = f"{cls.__name__}.csv"
         obj_list = []
         with open(filename, "r", encoding="utf-8") as file:
-            data = csv.DictReader(file)
-            inst_list = cls.from_json_string(data)
-            for instance in inst_list:
+            data = [*csv.DictReader(file)]
+            for instance in data:
                 obj = cls.create(**instance)
                 obj_list.append(obj)
         return obj_list
