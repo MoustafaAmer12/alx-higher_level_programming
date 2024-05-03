@@ -34,8 +34,10 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """Returns the json representation of a
-        list of dictionaries
+        """Converts list of dictionaries into JSON string
+        Returns:
+            JSON format string of `list_dictionaries`, or '[]' if None or
+                empty
         """
         if list_dictionaries is None or list_dictionaries == []:
             return '[]'
