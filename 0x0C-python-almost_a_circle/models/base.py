@@ -35,11 +35,10 @@ class Base:
         """Returns the json representation of a
         list of dictionaries
         """
-        if list_dictionaries is None or list_dictionaries == []:
-            return '[]'
-        if type(list_dictionaries) == list and type(list_dictionaries[0]) == dict: 
+        if list_dictionaries is None:
+            return "[]"
+        else: 
             return json.dumps(list_dictionaries)
-        return None
 
     @classmethod
     def save_to_file(cls, list_objs):
