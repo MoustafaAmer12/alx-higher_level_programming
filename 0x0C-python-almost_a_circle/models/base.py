@@ -120,9 +120,12 @@ class Base:
             fields[1:2] = "size"
         filename = f"{cls.__name__}.csv"
         obj_list = []
-        with open(filename, "r", encoding="utf-8") as file:
-            data = [*csv.DictReader(file)]
-            for instance in data:
-                obj = cls.create(**instance)
-                obj_list.append(obj)
+        try:
+            with open(filename, "r", encoding="utf-8") as file:
+                data = [*csv.DictReader(file)]
+                for instance in data:
+                    obj = cls.create(**instance)
+                    obj_list.append(obj)
+        except FileNotFoundError:
+            obj_list = []
         return obj_list
