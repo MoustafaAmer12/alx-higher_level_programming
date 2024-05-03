@@ -5,6 +5,7 @@ project initialization
 """
 import json
 import csv
+import turtle
 
 
 class Base:
@@ -130,3 +131,25 @@ class Base:
         except FileNotFoundError:
             return inst_list
         return inst_list
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """draws a list of shapes either squares
+        or rectangles
+        """
+        window = turtle.Screen()
+        pen = turtle.Pen()
+        figures = list_rectangles + list_squares
+        for fig in figures:
+            pen.up()
+            pen.goto(fig.x, fig.y)
+            pen.down()
+            pen.forward(fig.width)
+            pen.right(90)
+            pen.forward(fig.height)
+            pen.right(90)
+            pen.forward(fig.width)
+            pen.right(90)
+            pen.forward(fig.height)
+            pen.right(90)
+        window.exitonclick()
