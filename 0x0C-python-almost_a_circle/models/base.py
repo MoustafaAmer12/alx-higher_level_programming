@@ -102,7 +102,6 @@ class Base:
         elif cls.__name__ == "Square":
             fields = ("id", "size", "x", "y")
         filename = f"{cls.__name__}.csv"
-        
         list_dict = []
         for item in list_objs:
             list_dict.append(item.to_dictionary())
@@ -115,17 +114,19 @@ class Base:
     def load_from_file_csv(cls):
         """Loads data from a csv file
         """
-        fields = ["id", "width", "height", "x", "y"]
+        if cls.__name__ == "Rectangle":
+            fields = ("id", "width", "height", "x", "y")
         if cls.__name__ == "Square":
-            fields[1:2] = "size"
+            fields = ("id", "size", "x", "y")
         filename = f"{cls.__name__}.csv"
-        obj_list = []
+        inst_list = []
         try:
             with open(filename, "r", encoding="utf-8") as file:
-                data = [*csv.DictReader(file)]
-                for instance in data:
-                    obj = cls.create(**instance)
-                    obj_list.append(obj)
+                data = csv.DictReader(file)
+                for row in data:
+                    for key in fields:
+                        row[key] = int(row[key])
+                    inst_list.append(cls.create(**row))
         except FileNotFoundError:
-            obj_list = []
-        return obj_list
+            return inst_list
+        return inst_list
